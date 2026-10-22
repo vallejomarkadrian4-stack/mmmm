@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mark Adrian Vallejo | Portfolio</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff7fa;
+            color: #4a3540;
+            line-height: 1.6;
+        }
+
+        /* HEADER AND LOGO */
+        header {
+            background-color: #ffffff;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(220, 120, 160, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #765565;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e77ca6;
+        }
+
+        /* HOME SECTION */
+        #home {
+            min-height: 85vh;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .home-text {
+            max-width: 550px;
+        }
+
+        .home-text .welcome {
+            color: #e77ca6;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .home-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin: 15px 0;
+            color: #493441;
+        }
+
+        .home-text h1 span {
+            color: #e77ca6;
+        }
+
+        .home-text p {
+            color: #806d78;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #e98bb0;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d86b98;
+            transform: translateY(-2px);
+        }
+
+        /* PROFILE PICTURE */
+        .profile-container {
+            width: 300px;
+            height: 300px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: #f9dce8;
+            border: 8px solid white;
+            box-shadow: 0 8px 30px rgba(220, 120, 160, 0.2);
+            overflow: hidden;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SECTION STYLING */
+        section:not(#home) {
+            padding: 80px 8%;
+            text-align: center;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #493441;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #e77ca6;
+        }
+
+        .section-description {
+            color: #806d78;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        /* ABOUT ME */
+        #about {
+            background-color: #ffffff;
+        }
+
+        .about-card {
+            max-width: 750px;
+            margin: auto;
+            background-color: #fff7fa;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #f7dce7;
+        }
+
+        .about-card p {
+            color: #806d78;
+            margin-bottom: 15px;
+        }
+
+        /*  PROJECTS */
+        #projects {
+            background-color: #fff7fa;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            border: 1px solid #f6dce6;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(220, 120, 160, 0.12);
+        }
+
+        .project-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            color: #d86b98;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #806d78;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #ffffff;
+            color: #806d78;
+            font-size: 13px;
+            border-top: 1px solid #f7dce7;
+        }
+
+        footer span {
+            color: #e77ca6;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .logo img {
+                width: 42px;
+                height: 42px;
+            }
+
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 55px 6%;
+                gap: 30px;
+            }
+
+            .home-text h1 {
+                font-size: 36px;
+            }
+
+            .profile-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            section:not(#home) {
+                padding: 60px 6%;
+            }
+        }
+
+        @media (max-width: 380px) {
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .home-text h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER WITH LOGO -->
+    <header>
+        <div class="logo">
+            <a href="#home">
+                <img src="logo.png" alt="My logo">
+            </a>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+
+        <div class="home-text">
+            <p class="welcome">WELCOME TO MY PORTFOLIO </p>
+
+            <h1>
+                Hi, I'm <span>Mark Adrian Vallejo</span>
+            </h1>
+
+            <p>A Student who enjoys exploring creativity and technology.I believe every project is an oppurtunity to learn something new, improve my skills, and turn ideas into meaningful experiences </p>
+
+            <a href="#about" class="button">Discover More </a>
+        </div>
+
+        <!-- YOUR PROFILE PICTURE -->
+        <div class="profile-container">
+            <img src="profile.jpg" alt="My Profile Picture">
+        </div>
+
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about">
+
+        <h2 class="section-title">About <span>Me</span></h2>
+
+
+        <div class="about-card">
+            <p>
+               Hi I'm Mark Adrian Vallejo I'm a student at Aklan State University Currently Studying Bachelor of Science in Information Technology SMBPO (Service Management Business Process Outsorcing) who enjoys
+learning new things and improving my skills.
+I created this personal portfolio to introduce myself,
+share my interests, and showcase my abilities.
+    </p>
+<h2>My Skills</h2>
+<ul>
+<li>Basic Computer Skills</li>
+<li>HTML</li>
+<li>Communication Skills</li>
+<li>Teamwork Cooperations</li>
+</ul>
+
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+
+        <h2 class="section-title">Featured <span>Projects </span></h2>
+
+               <div class="projects-container">
+
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Mood Tracker</h3>
+                <p>
+                    A colorful website that allows users to record their daily moods and write short reflections about their day
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Smart To-do list</h3>
+                <p>
+                    A simple task management website that helps
+students organize their assignments, school
+activities, and daily tasks
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Student Grade Calculator</h3>
+                <p>        A simple application that calculates a student's average grade based on their subject scores.      </p>
+            </div>
+<!-- Contact -->
+<section id="contact">
+<h2>Contact Me</h2>
+<form action="/submit form" method="POST">
+<label for="name"> Name:</label>
+<input type="text" id="name" name="name"><br><br>
+<label for="email"> Email:</label>
+<input type="email" id="email" name="email"><br><br>
+<label for="message"> Message:<label><br>
+<textarea id=message" name="message" rows="4"cols="50"></textarea><br><br>
+<button type="submit">send</button>
+</form>
+
+
+<!-- Contact -->
+<section id="contact">
+<h2>Contact Me</h2>
+
+<p>
+Facebook:
+<a href="https://www.facebook.com/mark.adrian.vallejo.2025"
+target="_blank">
+Visit My Facebook
+</a>
+</p>
+
+<p>
+Instagram:
+<a href="https://www.instagram.com/aindrn_dreamz?dlrf=aHM5b2o2NGlkdHZn
+aindrn_dreamz/"
+target="_blank">
+Visit My Instagram
+</a>
+</p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy;2026 Mark Adrian Valleo All rigths reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
